@@ -99,13 +99,13 @@ Below is a sample comparison table adapted from the paper’s multiple experimen
 
 | **Method**                       | **FID (↓)** | **CLIP (↑)** | **Notes**                                       |
 |----------------------------------|------------:|------------:|-------------------------------------------------|
-| Standard Diffusion (DDPM/LDM)    | 50–90       | 0.22         | Curved path, typical cross-attn UNet backbone   |
+| Standard Diffusion (DDPM/LDM)    | 50–90       | 0.22         | Curved path, typical cross-attention UNet backbone   |
 | EDM (Karras et al.)             | 45–63       | 0.20–0.24    | Weighted schedule, still a diffusion approach   |
 | Rectified Flow (Uniform Timesteps) | 40–95       | 0.21–0.25    | Straight path helps, but unweighted scheduling  |
-| **Rectified Flow (Logit-Normal)** | **35–45**   | **0.24–0.26**| Best synergy of direct path & balanced timesteps|
+| **Rectified Flow (Logit-Normal)** | 35–45   | 0.24–0.26| Best synergy of direct path & balanced timesteps|
 | **Rectified Flow + MM-DiT**       | ~30–40      | 0.25–0.27    | Adds 2-stream transformer & large scale data    |
 
-*(Exact numeric ranges are illustrative summaries, combining FID/CLIP data from different subsets.)*
+*Note:* Table summarizes numerical results presented in the paper, please refer to the cited work for exact values.
 
 ---
 
