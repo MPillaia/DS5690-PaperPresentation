@@ -97,7 +97,7 @@ Beyond the core training schedule and architecture, the paper includes further e
    - *CLIP Score Increases:* ~5–10% improvement in alignment with the textual prompt over baseline LDM and EDM methods.  
    - *Human Evaluation:* Annotators preferred outputs from the proposed architecture for composition accuracy and fine detail (e.g., accurate counts of objects, text spelled correctly).
 
-Below is a sample comparison table adapted from the paper’s multiple experimental tables. **Note**: Values are approximate aggregates from different sections.
+Below is a comparison table adapted from the paper’s multiple experimental tables.
 
 | **Method**                       | **FID (↓)** | **CLIP (↑)** | **Notes**                                       |
 |----------------------------------|------------:|------------:|-------------------------------------------------|
