@@ -46,7 +46,7 @@ This section details the two main novelties: the *straight-line forward process*
    - *Consistency at Scale:* Gains remained consistent as model size grew from hundreds of millions of parameters to multiple billions.
 
 
-![Algorithm1](Algorithm1.PNG)
+![Algorithm1](images/Algorithm1.PNG)
 
 ---
 
@@ -70,11 +70,11 @@ This section details the two main novelties: the *straight-line forward process*
    - *Improved Typography:* Tests with instructions to place words or letters on surfaces show fewer spelling errors and more consistent text alignment.  
    - *Scaling Trends:* Even at lower model sizes, the multi-stream design outperforms single-stream approaches. At 2B parameters and above, the gap widens further.
 
-![Algorithm2](Algorithm2.PNG)
+![Algorithm2](images/Algorithm2.PNG)
 
 **Paper Figure 2: MM-DiT Block ($Block_{\Theta})$**
 
-![MM-DiT Block](MM-DiT_Block.PNG)
+![MM-DiT Block](images/MM-DiT_Block.PNG)
 
 ---
 
@@ -111,7 +111,7 @@ Below is a comparison table adapted from the paper’s multiple experimental tab
 *Note:* Table summarizes numerical results presented in the paper, please refer to the cited work for exact values.
 
 **Paper Figure 7: Comparative Human Preference Evluation**
-![Comparison](Model_Comparison.PNG)
+![Comparison](images/Model_Comparison.PNG)
 
 ---
 
