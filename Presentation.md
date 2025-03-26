@@ -1,13 +1,12 @@
 # Scaling Rectified Flow Transformers for High-Resolution Image Synthesis
+*Patrick Esser, Sumith Kulal, Andreas Blattmann, Rahim Entezari, Jonas Müller, Harry Saini, Yam Levi, Dominik Lorenz, Axel Sauer, Frederic Boesel, Dustin Podell, Tim Dockhorn, Zion English, Kyle Lacey, Alex Goodwin, Yannik Marek, Robin Rombach*
 
-
+---
 ## 1. High-Level Overview
 
 Text-to-image generation has evolved rapidly in recent years, driven largely by **diffusion models** that iteratively transform noise into images. This paper, however, proposes **Rectified Flow** as a more direct way to connect noise and data, claiming improved stability and fewer steps in sampling—especially when combined with a **multistream transformer** for textual conditioning.
 
-**Paper Figure 7: Sample Image Generation**
-
-![sample_images](sample_images.PNG)
+[**Code Demonstration**](https://colab.research.google.com/drive/1_zXcfkcUdRWRC4Ze80KwWfpVPImF_YaD?usp=sharing)
 
 ### Why This Matters
 1. **Straight Path vs. Curved Path**  
@@ -22,8 +21,6 @@ Text-to-image generation has evolved rapidly in recent years, driven largely by 
 3. **Scaling & Performance**  
    - Demonstrates strong results at resolutions up to **1024×1024**, with up to **8B** parameters.  
    - Thorough experiments show improved **FID**, **CLIP** score, and **prompt adherence** across large-scale datasets.
-
-> **Figure**: Please include **Figure 1 from the paper**, which shows various high-resolution samples from the largest model—these highlight typography capabilities, fine detail, and faithful prompt interpretation.
 
 ---
 
@@ -48,7 +45,6 @@ This section details the two main novelties: the *straight-line forward process*
    - *Better FID and CLIP Scores:* Logit-normal weighting offered up to a 10–15% improvement in FID (lower is better) across diverse text prompts.  
    - *Consistency at Scale:* Gains remained consistent as model size grew from hundreds of millions of parameters to multiple billions.
 
-> **Figure**: Please include **Figure 2 from the paper**, where they visually compare uniform sampling vs. logit-normal sampling curves, demonstrating the heavier emphasis on mid-range \(t\) for Rectified Flow.
 
 ![Algorithm1](Algorithm1.PNG)
 
@@ -130,15 +126,15 @@ Below is a comparison table adapted from the paper’s multiple experimental tab
   - The multi-stream approach addresses a longstanding challenge in diffusion models (accurate comprehension of complex prompts).
 
 ### 3.2 Potential Weaknesses
-- **Computational Costs**  
-  - Training 8B-parameter transformers requires extensive GPU or TPU resources.  
-- **Data Bias & Memorization**  
-  - Large, web-sourced training sets risk containing biases or revealing privacy-related details if not carefully curated.  
+- **Timed Noise Sampling (Logit-Normal) Assumptions**  
+  - Because fewer training iterations involve near-zero or near-complete noise, the model may not learn as thoroughly how to handle these boundary cases. If the “hard” parts of image generation (e.g., certain composition details) actually require specialized handling in early or late diffusion steps, an overfocus on mid-range noise may not capture these nuances adequately.
+- **Complexity Introduced by Multiple Text Encoders**  
+  - The multi-stream approach typically yields better text fidelity, but can also introduce unique tuning challenges. Aligning outputs from different encoders (T5 vs. CLIP, etc.) can be non-trivial, and mismatches between them sometimes lead to inconsistent or contradictory style cues in the generated images.
 - **Reliance on Good Text Encoders**  
   - If a domain-specific concept isn’t in T5/CLIP’s knowledge, the model’s generation for that concept may degrade significantly.
 
 ### 3.3 Comparisons to Existing Work
-The authors cite older text-to-image models such as **Stable Diffusion** or **DALL·E**. Although these remain popular, the paper argues that the **Rectified Flow** approach plus a multi-encoder design leads to stronger results on tasks requiring compositional or linguistic precision (like placing words in certain positions, counting objects, etc.).
+The authors cite older text-to-image models such as **DALL·E**. Although these remain popular, the paper argues that the **Rectified Flow** approach plus a multi-encoder design leads to stronger results on tasks requiring compositional or linguistic precision (like placing words in certain positions, counting objects, etc.).
 
 ---
 
@@ -146,7 +142,8 @@ The authors cite older text-to-image models such as **Stable Diffusion** or **DA
 
 1. **Immediate Influence**  
    - **Open-Source Potential**: A straightforward rectified-flow approach could be more user-friendly for custom or smaller-scale generation tasks (fewer sampling steps).  
-   - **Better, More Accessible Prompt Adherence**: Medium-sized labs and creative professionals continue to gain more advanced text rendering capabilities.
+   - **Better Prompt Adherence**: Labs and creative professionals continue to gain more advanced text rendering capabilities.
+   - **Hobbyist Interest**: The Stable Diffusion 3 uses novelties discussed in this paper to bring widespread use of image generation by individuals on relatively limited hardware.
 
 2. **Long-Term Outlook**  
    - Could shift standard practice away from purely diffusion-based schedules toward *straight-line flow* variants, especially in large-scale settings.  
@@ -169,19 +166,24 @@ The authors cite older text-to-image models such as **Stable Diffusion** or **DA
 ---
 
 ## Resource Links & Further Reading
+1. **Model Page**  
+   - [HuggingFace Stable Diffusion 3 Medium Model](https://huggingface.co/stabilityai/stable-diffusion-3-medium)
 
-1. **Paper Reference**  
-   *Scaling Rectified Flow Transformers for High-Resolution Image Synthesis*  
-   (arXiv:2403.03206 or relevant link)
+2. **Fine-Tuning on Stable Diffusion 3**  
+   - [StabilityAI Fine Tuning Guide](https://stability.ai/learning-hub/stable-diffusion-3-medium-fine-tuning-tutorial)
 
-2. **Repository**  
-   - Official code and pretrained models:  
-     **\[Link to project’s GitHub\]**
+3. **Technical Blog**  
+   - [Additional Training Figures and Mathematical Intuitiion](https://www.superteams.ai/blog/a-technical-deep-dive-into-stable-diffusion-3)
+   - 
+4. **Rigorous Evaluation and Comparison of Image Generation Models**
+   - Huang, K., Sun, K., Xie, E., Li, Z., & Liu, X. (2023). T2i-compbench: A comprehensive benchmark for open-world compositional text-to-image generation. *Advances in Neural Information Processing Systems*, 36, 78723-78747.
+   - [Paper Link](https://arxiv.org/abs/2307.06350)
+   
+5. **Lecture Notes and Code Demonstration**
+   - [Notes on Rectified Flow](https://www.cs.utexas.edu/~lqiang/rectflow/html/intro.html)
+   - [Implementation](https://github.com/lucidrains/rectified-flow-pytorch)
 
-3. **Related Blogs and Model Pages**  
-   - *(e.g., stability.ai or other open-source blog announcements)*
-
-4. **Other Works**  
-   - Diffusion vs. flow-based frameworks, competitor open-source repos, etc.
-
-> *Please remember to copy any relevant figures (e.g., Figures 1, 2, and 3) from the original paper into this Markdown document to visually support the textual content.*
+---
+## Paper Citation 
+- Esser, P., Kulal, S., Blattmann, A., Entezari, R., Müller, J., Saini, H., ... & Rombach, R. (2024, July). Scaling rectified flow transformers for high-resolution image synthesis. *In Forty-first international conference on machine learning.*  
+- [Paper Link](https://doi.org/10.48550/arXiv.2403.03206)
