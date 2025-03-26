@@ -73,6 +73,7 @@ This section details the two main novelties: the *straight-line forward process*
 
 MM-DiT Block (B)
 ![Block](MM-DiT Block.PNG)
+
 ---
 
 ### 2.3 Additional Experiments & Observations
@@ -109,6 +110,7 @@ Below is a comparison table adapted from the paper’s multiple experimental tab
 
 Comparative Human Preference Evluation
 ![Comparison](Model Comparison.PNG)
+
 ---
 
 ## 3. Critical Analysis
