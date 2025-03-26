@@ -1,8 +1,5 @@
 # Scaling Rectified Flow Transformers for High-Resolution Image Synthesis
 
-Below is the primary content for a 10–15 minute oral presentation, organized as a Markdown document. You can scroll through and read it verbatim if desired. We focus on **Rectified Flow** and a new **multimodal transformer architecture (MM-DiT)**, highlighting the relevant experiments and results.  
-
----
 
 ## 1. High-Level Overview
 
