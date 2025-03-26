@@ -16,8 +16,7 @@ Text-to-image generation has evolved rapidly in recent years, driven largely by 
 
 2. **Multimodal Transformer (MM-DiT)**  
    - Replaces or supplements the usual UNet architecture with a **transformer** that processes text and image tokens in parallel.  
-   - Incorporates multiple text encoders (e.g., T5, CLIP) so longer or more complex prompts can be understood.
-
+   - Incorporates multiple text encoders (e.g., T5, CLIP).
 3. **Scaling & Performance**  
    - Demonstrates strong results at resolutions up to **1024×1024**, with up to **8B** parameters.  
    - Thorough experiments show improved **FID**, **CLIP** score, and **prompt adherence** across large-scale datasets.
