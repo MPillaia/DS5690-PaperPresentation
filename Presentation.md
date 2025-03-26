@@ -146,7 +146,7 @@ The authors cite older text-to-image models such as **Stable Diffusion** or **DA
 
 1. **Immediate Influence**  
    - **Open-Source Potential**: A straightforward rectified-flow approach could be more user-friendly for custom or smaller-scale generation tasks (fewer sampling steps).  
-   - **Better Prompt Adherence**: Medium-sized labs and creative professionals gain advanced text rendering capabilities.
+   - **Better, More Accessible Prompt Adherence**: Medium-sized labs and creative professionals continue to gain more advanced text rendering capabilities.
 
 2. **Long-Term Outlook**  
    - Could shift standard practice away from purely diffusion-based schedules toward *straight-line flow* variants, especially in large-scale settings.  
