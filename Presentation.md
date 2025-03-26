@@ -69,9 +69,10 @@ This section details the two main novelties: the *straight-line forward process*
    - *Improved Typography:* Tests with instructions to place words or letters on surfaces show fewer spelling errors and more consistent text alignment.  
    - *Scaling Trends:* Even at lower model sizes, the multi-stream design outperforms single-stream approaches. At 2B parameters and above, the gap widens further.
 
-> **Figure**: Please include **Figure 3 from the paper**, labeled “Architecture Overview” or “MM-DiT Block” (depending on the paper version), which illustrates how text tokens and image patches are processed in parallel streams before merging in attention blocks.
-
 ![Algorithm2](Algorithm2.PNG)
+
+MM-DiT Block (B)
+![Block](MM-DiT Block.PNG)
 ---
 
 ### 2.3 Additional Experiments & Observations
@@ -79,7 +80,7 @@ This section details the two main novelties: the *straight-line forward process*
 Beyond the core training schedule and architecture, the paper includes further experiments that refine the approach:
 
 1. **Improved Autoencoder Latents**  
-   - Higher channel capacities (\(d = 16\) vs. \(d = 4\)) produce better fidelity on reconstructions, ensuring the Transformer sees richer latent inputs.  
+   - Higher channel capacities $(\(d = 16\) vs. \(d = 4\))$ produce better fidelity on reconstructions, ensuring the Transformer sees richer latent inputs.  
    - The paper’s ablation shows that the difference in final FID can be ~10–20% when moving from smaller to larger autoencoder channel sizes.
 
 2. **Synthetic Captions for Better Text Understanding**  
@@ -106,6 +107,8 @@ Below is a comparison table adapted from the paper’s multiple experimental tab
 
 *Note:* Table summarizes numerical results presented in the paper, please refer to the cited work for exact values.
 
+Comparative Human Preference Evluation
+![Comparison](Model Comparison.PNG)
 ---
 
 ## 3. Critical Analysis
