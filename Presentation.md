@@ -5,6 +5,10 @@
 
 Text-to-image generation has evolved rapidly in recent years, driven largely by **diffusion models** that iteratively transform noise into images. This paper, however, proposes **Rectified Flow** as a more direct way to connect noise and data, claiming improved stability and fewer steps in sampling—especially when combined with a **multistream transformer** for textual conditioning.
 
+**Paper Figure 7: Sample Image Generation**
+
+![sample_images](sample_images.PNG)
+
 ### Why This Matters
 1. **Straight Path vs. Curved Path**  
    - Traditional diffusion frameworks follow a carefully designed “curved” path from data to noise.  
@@ -72,7 +76,8 @@ This section details the two main novelties: the *straight-line forward process*
 
 ![Algorithm2](Algorithm2.PNG)
 
-**MM-DiT Block ($Block_{\Theta})$**
+**Paper Figure 2: MM-DiT Block ($Block_{\Theta})$**
+
 ![MM-DiT Block](MM-DiT_Block.PNG)
 
 ---
@@ -109,7 +114,7 @@ Below is a comparison table adapted from the paper’s multiple experimental tab
 
 *Note:* Table summarizes numerical results presented in the paper, please refer to the cited work for exact values.
 
-Comparative Human Preference Evluation
+**Paper Figure 7: Comparative Human Preference Evluation**
 ![Comparison](Model_Comparison.PNG)
 
 ---
