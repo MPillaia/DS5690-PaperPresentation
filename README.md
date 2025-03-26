@@ -174,7 +174,7 @@ The authors cite older text-to-image models such as **DALL·E**. Although these 
 
 3. **Technical Blog**  
    - [Additional Training Figures and Mathematical Intuitiion](https://www.superteams.ai/blog/a-technical-deep-dive-into-stable-diffusion-3)
-   - 
+     
 4. **Rigorous Evaluation and Comparison of Image Generation Models**
    - Huang, K., Sun, K., Xie, E., Li, Z., & Liu, X. (2023). T2i-compbench: A comprehensive benchmark for open-world compositional text-to-image generation. *Advances in Neural Information Processing Systems*, 36, 78723-78747.
    - [Paper Link](https://arxiv.org/abs/2307.06350)
