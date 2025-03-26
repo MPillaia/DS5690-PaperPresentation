@@ -47,6 +47,7 @@ This section details the two main novelties: the *straight-line forward process*
 > **Figure**: Please include **Figure 2 from the paper**, where they visually compare uniform sampling vs. logit-normal sampling curves, demonstrating the heavier emphasis on mid-range \(t\) for Rectified Flow.
 
 ![Algorithm1](Algorithm1.PNG)
+
 ---
 
 ### 2.2 Multimodal Transformer (MM-DiT)
@@ -71,8 +72,8 @@ This section details the two main novelties: the *straight-line forward process*
 
 ![Algorithm2](Algorithm2.PNG)
 
-MM-DiT Block (B)
-![Block](MM-DiT Block.PNG)
+**MM-DiT Block ($Block_{\Theta})$**
+![MM-DiT Block](MM-DiT_Block.PNG)
 
 ---
 
@@ -109,7 +110,7 @@ Below is a comparison table adapted from the paper’s multiple experimental tab
 *Note:* Table summarizes numerical results presented in the paper, please refer to the cited work for exact values.
 
 Comparative Human Preference Evluation
-![Comparison](Model Comparison.PNG)
+![Comparison](Model_Comparison.PNG)
 
 ---
 
