@@ -49,6 +49,7 @@ This section details the two main novelties: the *straight-line forward process*
 
 > **Figure**: Please include **Figure 2 from the paper**, where they visually compare uniform sampling vs. logit-normal sampling curves, demonstrating the heavier emphasis on mid-range \(t\) for Rectified Flow.
 
+![Algorithm1](Algorithm1.PNG)
 ---
 
 ### 2.2 Multimodal Transformer (MM-DiT)
@@ -73,6 +74,7 @@ This section details the two main novelties: the *straight-line forward process*
 
 > **Figure**: Please include **Figure 3 from the paper**, labeled “Architecture Overview” or “MM-DiT Block” (depending on the paper version), which illustrates how text tokens and image patches are processed in parallel streams before merging in attention blocks.
 
+![Algorithm2](Algorithm2.PNG)
 ---
 
 ### 2.3 Additional Experiments & Observations
