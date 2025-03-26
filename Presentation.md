@@ -33,8 +33,8 @@ This section details the two main novelties: the *straight-line forward process*
 ### 2.1 Rectified Flow Training Formulation
 
 1. **Core Idea**  
-   - The forward noising process is defined as: $z_t = (1 - t)x + t\varepsilon $
-     where $\(x\)$ is the image data, $\(\varepsilon\)$ is Gaussian noise, and $\(t\)$ ranges from $\(0\)$ to $\(1\)$.  
+   - The forward noising process is defined as: $z_t = (1 - t)x_0 + t\varepsilon $
+     where $\(x_0\)$ is the image data, $\(\varepsilon\)$ is Gaussian noise, and $\(t\)$ ranges from $\(0\)$ to $\(1\)$.  
    - Instead of a “curved” schedule (where variance changes in a non-linear way), **Rectified Flow** forms a direct line in latent space.
 
 2. **Timed Noise Sampling (Logit-Normal vs. Uniform)**  
